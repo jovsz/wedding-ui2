@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from 'react';
-import { Card, Image } from "@nextui-org/react";
+import { Card, Image, Button } from "@nextui-org/react";
 import ConfirmationForm from './components/ConfirmationForm';
 import Logo from './assets/images/logo.jpeg'
 import TituloRow from './assets/images/tituloRow.jpg'
+import { CiMail } from "react-icons/ci";
+
 const Confirmation = () => {
   const targetDate = new Date('2024-12-14T00:00:00'); // Set your target date here
   const [timeLeft, setTimeLeft] = useState({ days: 0, hours: 0, minutes: 0 });
@@ -27,7 +29,8 @@ const Confirmation = () => {
   }, [targetDate]);
 
   return (
-    <Card className="py-4 relative w-8/12">
+    <div className='w-full p-8 '>
+    <Card className="  shadow-[#87A46C] relative w-full p-2 py-2">
       <header className="mb-4">
         <div className="flex flex-col items-center">
           <Image width={300} id="logo" src={Logo} alt="logo" className="mb-2 relative top-0 left-0 z-10" />
@@ -47,23 +50,18 @@ const Confirmation = () => {
         <p className="text-[#929A6D]">FAVOR DE REALIZAR SU CONFIRMACIÓN POR ESTE MEDIO:</p>
         <ConfirmationForm />
         <p id="importante" className="text-[#929A6D]">* FAVOR DE CONFIRMA ASISTENCIA ANTES DEL <span>10 DE DICIEMBRE</span></p>
-        <p id="mesa-regalos">Mesa de Regalos</p>
-        <button className="bg-gray-300 p-2 rounded mr-2">
-          <a href="https://www.amazon.com.mx" target="_blank" rel="noopener noreferrer">AMAZON</a>
-        </button>
-        <button className="bg-gray-300 p-2 rounded">
-          <a href="sobre.html" target="_blank" rel="noopener noreferrer">SOBRE</a>
-        </button>
+        <Button  radius="full" className="bg-gradient-to-tr from-[#C1CD9A] to-[#4E6C42] text-white shadow-lg">
+        <CiMail />
+        </Button>
       </section>
       <footer className="mt-4">
         <section id="cuenta" className="text-center">
-          <p id="faltan">FALTAN</p>
-          <p id="cuenta-regresiva">{`${timeLeft.days} D ${timeLeft.hours} H ${timeLeft.minutes} M`}</p>
-          <p id="etiquetas">DIAS  H  MIN</p>
+          <p className='text-[#707F63]' id="faltan">FALTAN</p>
+          <p className='text-[#E4CD76]' id="cuenta-regresiva">{`${timeLeft.days} D ${timeLeft.hours} H ${timeLeft.minutes} M`}</p>
         </section>
-        <button id="contactanos" className="bg-blue-500 text-white p-2 rounded">CONTACTANOS</button>
       </footer>
     </Card>
+    </div>
   );
 };
 
