@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { Card, Image } from "@nextui-org/react";
 import ConfirmationForm from './components/ConfirmationForm';
+import Logo from './assets/images/logo.jpeg'
+import TituloRow from './assets/images/tituloRow.jpg'
 const Confirmation = () => {
   const targetDate = new Date('2024-12-14T00:00:00'); // Set your target date here
   const [timeLeft, setTimeLeft] = useState({ days: 0, hours: 0, minutes: 0 });
@@ -28,8 +30,8 @@ const Confirmation = () => {
     <Card className="py-4 relative w-8/12">
       <header className="mb-4">
         <div className="flex flex-col items-center">
-          <Image width={300} id="logo" src="public/images/logo.jpeg" alt="logo" className="mb-2 relative top-0 left-0 z-10" />
-          <Image width={300} id="nombres" src="public/images/tituloRow.jpg" alt="luciaymario" className="mb-4" />
+          <Image width={300} id="logo" src={Logo} alt="logo" className="mb-2 relative top-0 left-0 z-10" />
+          <Image width={300} id="nombres" src={TituloRow} alt="luciaymario" className="mb-4" />
         </div>
       </header>
       <section className="text-center">
