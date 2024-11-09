@@ -9,8 +9,8 @@ createRoot(document.getElementById('root')).render(
     <NextUIProvider>
       <Router> {/* Wrap App with Router */}
         <Routes> {/* Define your routes here */}
-          <Route path="/" element={<App />} /> {/* Main App Route */}
-          <Route path="/confirmation" element={<Confirmation />} /> {/* Route for Confirmation */}
+          {/* <Route path="/" element={<App />} /> Main App Route */}
+          <Route path="/" element={<Confirmation />} /> {/* Route for Confirmation */}
         </Routes>
       </Router>
     </NextUIProvider>
