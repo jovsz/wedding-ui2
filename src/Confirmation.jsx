@@ -30,14 +30,14 @@ const Confirmation = () => {
 
   return (
     <div className='w-full p-8 '>
-    <Card className="  shadow-[#87A46C] relative w-full p-2 py-2">
+    <Card className=" shadow-[#87A46C] relative w-full p-2 py-2">
       <header className="mb-4">
         <div className="flex flex-col items-center">
           <Image width={300} id="logo" src={Logo} alt="logo" className="mb-2 relative top-0 left-0 z-10" />
           <Image width={300} id="nombres" src={TituloRow} alt="luciaymario" className="mb-4" />
         </div>
       </header>
-      <section className="text-center">
+      <section className="text-center flex flex-col justify-center items-center">
         <h2 className="text-[#929A6D] text-xl">SÁBADO 14 DE DICIEMBRE DEL 2024</h2>
         <p className="text-[#929A6D]">Tijuana, B.C</p>
         <h3 className="text-lg">FAMILIA Y AMIGOS,</h3>
@@ -55,10 +55,10 @@ const Confirmation = () => {
         </Button>
       </section>
       <footer className="mt-4">
-        <section id="cuenta" className="text-center">
+        <div id="cuenta" className="text-center p-5">
           <p className='text-[#707F63]' id="faltan">FALTAN</p>
           <p className='text-[#E4CD76]' id="cuenta-regresiva">{`${timeLeft.days} D ${timeLeft.hours} H ${timeLeft.minutes} M`}</p>
-        </section>
+        </div>
       </footer>
     </Card>
     </div>
