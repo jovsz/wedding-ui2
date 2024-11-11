@@ -28,10 +28,13 @@ const ConfirmationForm = () => {
                 totalConfirmed: confirmGuests,
             }),
         });
+        // console.log('Response', response)
         if (!response.ok) {
-            setResponse(response.data.message)
-            throw new Error('Network response was not ok');
+            const errorData = await response.json();
+            console.log(errorData)
+            setResponse(errorData.message)
         }
+        
         return response.json();
     });
 
