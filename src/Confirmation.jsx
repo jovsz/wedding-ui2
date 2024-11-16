@@ -1,12 +1,11 @@
 import React, { useEffect, useState } from 'react';
-import { Card, Image, Button } from "@nextui-org/react";
+import { Card, Image  } from "@nextui-org/react";
 import ConfirmationForm from './components/ConfirmationForm';
 import Logo from './assets/images/logo.jpeg'
 import TituloRow from './assets/images/tituloRow.jpg'
-import { CiMail } from "react-icons/ci";
-
+import CardComponent from './components/Card';
 const Confirmation = () => {
-  const targetDate = new Date('2024-12-14T00:00:00'); // Set your target date here
+  const targetDate = new Date('2024-12-14T00:00:00'); 
   const [timeLeft, setTimeLeft] = useState({ days: 0, hours: 0, minutes: 0 });
 
   useEffect(() => {
@@ -25,7 +24,7 @@ const Confirmation = () => {
       }
     }, 1000);
 
-    return () => clearInterval(interval); // Cleanup on component unmount
+    return () => clearInterval(interval); 
   }, [targetDate]);
 
   return (
@@ -40,19 +39,17 @@ const Confirmation = () => {
       <section className="text-center flex flex-col justify-center items-center">
         <h2 className="text-[#929A6D] text-xl">SÁBADO 14 DE DICIEMBRE DEL 2024</h2>
         <p className="text-[#929A6D]">Tijuana, B.C</p>
-        <h3 className="text-lg">FAMILIA Y AMIGOS,</h3>
-        <p className="text-base">
-          QUEREMOS COMPARTIR NUESTRO MOMENTO INOLVIDABLE CON USTEDES. ESTE SITIO WEB FUE CREADO PARA CONFIRMAR SU ASISTENCIA Y ACLARAR TODAS SUS DUDAS. OJALA PUEDAN ACOMPAÑARNOS, SERÁ UNA NOCHE ESPECIAL E INOLVIDABLE.
+        <p className="p-2 font-thin">
+        Estamos emocionados de que nos acompañes en nuestra boda. Tu presencia hará que este momento sea aún más inolvidable.
+
+Nos vemos el 14 de Diciembre a las 18:00 en Tijuana, B.C. ¡Será un día lleno de amor, risas y recuerdos para toda la vida!
+
+Con todo nuestro cariño,
         </p>
-        <p className="text-base">CON AMOR,</p>
-        <p className="text-base">JOVANNY Y REBECA</p>
-        <p className="text-base">J.F.R.G</p>
-        <p className="text-[#929A6D]">FAVOR DE REALIZAR SU CONFIRMACIÓN POR ESTE MEDIO:</p>
+        <p className="text-base">Jovanny Y Rebeca</p>
         <ConfirmationForm />
         <p id="importante" className="text-[#929A6D]">* FAVOR DE CONFIRMA ASISTENCIA ANTES DEL <span>10 DE DICIEMBRE</span></p>
-        <Button  radius="full" className="bg-gradient-to-tr from-[#C1CD9A] to-[#4E6C42] text-white shadow-lg">
-        <CiMail />
-        </Button>
+        {/* <CardComponent /> */}
       </section>
       <footer className="mt-4">
         <div id="cuenta" className="text-center p-5">
