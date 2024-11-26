@@ -18,13 +18,16 @@ const ConfirmationForm = () => {
     const [confirmed, setConfirmed] = useState(false)
 
 
-    const { data: names, isLoading, error } = useQuery(['names'], async () => {
-        const response = await fetch(`${import.meta.env.VITE_API_URL + '/invitations/names'}`);
-        if (!response.ok) {
+    const { data: names, isLoading, error } = useQuery(['names'], 
+        async () => {
+            const response = await fetch(`${import.meta.env.VITE_API_URL + '/invitations/names'}`);
+            if (!response.ok) {
             throw new Error('Network response was not ok');
         }
         return response.json();
     });
+
+    console.log(isLoading)
 
     const mutation = useMutation(async () => {
         const response = await fetch(`${import.meta.env.VITE_API_URL + '/invitations/confirm'}`, {
@@ -117,7 +120,7 @@ const ConfirmationForm = () => {
                         </Autocomplete>
                     )}
 
-                    <Button isDisabled={confirmed || !full} onClick={sendInfo} radius="full" className="bg-gradient-to-tr from-[#C1CD9A] to-[#4E6C42] text-white shadow-lg m-2">
+                    <Button isLoading={!names?.length} isDisabled={confirmed || !full} onClick={sendInfo} radius="full" className="bg-gradient-to-tr from-[#C1CD9A] to-[#4E6C42] text-white shadow-lg m-2">
                         Confirmar Asistencia
                     </Button>
                 </div>
